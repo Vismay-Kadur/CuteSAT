@@ -1,0 +1,193 @@
+body {
+  background-color: #121212;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: #1f1f1f;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #eee;
+}
+
+.connect-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.connected {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* LEFT PANEL */
+.data-panel {
+  width: 250px;
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-right: 1px solid #333;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.grid-container {
+  display: grid;
+  gap: 8px;
+}
+
+.divider {
+  border-bottom: 1px solid #444;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.data-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2a2a2a;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.data-card .value {
+  color: #4caf50;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* RIGHT PANEL */
+.charts-panel {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 3D ORIENTATION SECTION */
+.orientation-row {
+  display: flex;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 10px;
+  /* INCREASED HEIGHT HERE */
+  height: 500px;
+  border: 1px solid #333;
+  gap: 20px;
+  flex-shrink: 0;
+  /* Prevent shrinking when graphs load */
+}
+
+.model-wrapper {
+  flex: 2;
+  background-color: #000;
+  border-radius: 5px;
+  position: relative;
+  border: 1px solid #444;
+}
+
+.orientation-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.chart-title {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 10;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.upload-box {
+  margin-top: auto;
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+}
+
+.upload-btn {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.upload-btn:hover {
+  background-color: #666;
+  border-color: #888;
+}
+
+/* GRAPH GRID */
+.chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.js-plotly-plot {
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  overflow: hidden;
+}
+
+/* Add this to ensure the map fits nicely in the grid */
+.chart-grid {
+  display: grid;
+  /* Auto-fit columns: Will create 2 columns on wide screens, 1 on small */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 15px;
+  padding-bottom: 20px;
+}
+
+.map-wrapper {
+  background-color: #1e1e1e;
+}
+
+/* ... (Keep all previous CSS) ... */
